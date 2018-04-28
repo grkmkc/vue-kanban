@@ -46,12 +46,10 @@ export default {
     itemLane(item) {
       if (this.$store.state.items.todo.includes(item)) {
         return "todo";
-      } 
-      /*  if (this.$store.state.items.test.include(item)){
-         return 'test';
-       } */
-      else if (this.$store.state.items.develop.includes(item)) {
+      } else if (this.$store.state.items.develop.includes(item)) {
         return "develop";
+      } else if (this.$store.state.items.test.includes(item)) {
+        return "test";
       }
       return "done";
     },
@@ -62,7 +60,7 @@ export default {
     badgeClass(item) {
       const lane = this.itemLane(item);
       return badgeDetail[lane].class;
-    },
+    }
   },
   computed: mapState({
     items: s => [

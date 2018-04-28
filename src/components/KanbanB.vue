@@ -11,7 +11,7 @@
           <tasks id="test" title="Test" :items="testItems"></tasks>
         </div>
         <div class="col-md">
-          <tasks id="done" title="Done" :items="DoneItems"></tasks>
+          <tasks id="done" title="Done" :items="doneItems"></tasks>
         </div>
     </div>
   </div>
@@ -27,8 +27,8 @@ export default {
   },
   computed: mapState({
     todoItems: s => s.items.todo,
-    developItems: s => s.items.inProgress,
-    testItems: s => s.items.inProgress,
+    developItems: s => s.items.develop,
+    testItems: s => s.items.test,
     doneItems: s => s.items.done
   })
 };

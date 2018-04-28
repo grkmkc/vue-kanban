@@ -4,20 +4,32 @@
         <div class="col-md">
           <tasks id="todo" title="To-Do" :items="todoItems"></tasks>
         </div>
+        <div class="col-md">
+          <tasks id="develop" title="Develop" :items="developItems"></tasks>
+        </div>
+        <div class="col-md">
+          <tasks id="test" title="Test" :items="testItems"></tasks>
+        </div>
+        <div class="col-md">
+          <tasks id="done" title="Done" :items="DoneItems"></tasks>
+        </div>
     </div>
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
-import Tasks from './Tasks';
+import { mapState } from "vuex";
+import Tasks from "./Tasks";
 
 export default {
-  name: 'KanbanBoard',
+  name: "KanbanBoard",
   components: {
-    'tasks': Tasks,
+    tasks: Tasks
   },
   computed: mapState({
     todoItems: s => s.items.todo,
-  }),
+    developItems: s => s.items.inProgress,
+    testItems: s => s.items.inProgress,
+    doneItems: s => s.items.done
+  })
 };
 </script>

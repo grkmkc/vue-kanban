@@ -9,6 +9,9 @@ export default new Vuex.Store({
   state: {
     items: {
       todo: [],
+      develop: [],
+      test: [],
+      done:[],
     },
     nextId: 1,
   },

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import Vue from 'vue';
 import Vuex from 'vuex';
 
@@ -10,5 +11,11 @@ export default new Vuex.Store({
       todo: [],
     },
     nextId: 1,
+  },
+  mutations : {
+    addItem(state, item) {
+      state.items.todo.push(Object.assign(item, {i: state.nextId}));
+      state.nextId += 1;
+    },
   },
 });

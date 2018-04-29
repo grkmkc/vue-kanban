@@ -28,15 +28,15 @@ export default {
   computed: {
     itemCount() {
       if (!this.items) return '';
-      if (this.items.length === 1) return '1 task';
+      if (this.items.length === 1) return '1 task';  //1item varsa task coksa tasks olsun. yoksa boş dursun.
       return `${this.items.length} tasks`;
     },
     draggables : {
       get () {
-        return this.items;
+        return this.items; // dragable olsun ki taşıyabilelim.
       },
       set(items) {
-        this.$store.commit('updateItems', {
+        this.$store.commit('updateItems', {    // drag ettiğimizde update alalım store larken.
           items,
           id : this.id,
         });

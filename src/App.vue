@@ -3,7 +3,6 @@
   <div id="app">
     <div class="page-header">
       <h1>Kanban Board</h1>
-      <p class="lead">komponent</p>
     </div>
     <menu-bar></menu-bar>
     <router-view/>
@@ -23,5 +22,6 @@ export default {
 <style>
   .page-header h1 {
     font-weight: 300;
+    text-align: center; 
   }
 </style>
